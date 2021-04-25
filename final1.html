@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>video background</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!----<link href="styles.css" rel="stylesheet" type="text/css">--->
+
+	<style type="text/css">
+		body{
+			font-family: arial;
+		}
+
+		#home{
+			background: none;
+			height: 100%;
+		}
+
+		#home-bg-video{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: -1;
+		}
+
+		#home-overlay{
+			background-color: rgba(0,0,0,0.4);
+			height: 40vw;
+		    width: 100%;
+			/*position: fixed;*/
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+
+		#home-content{
+			width: 100%;
+			height: 100%;
+			display: table;
+			margin-top: 260px;
+		}
+
+        #home-content-inner{
+        	display: table-cell;
+        	vertical-align: middle;
+        }
+
+        #home-heading-1{
+        	color: white;
+        	font-size: 65px;
+        	font-weight: 700;
+        	text-transform: uppercase;
+        	margin: 0;
+        	display: inline-block; 
+        }
+
+        #home-heading h1{
+        	color: white;
+        	font-size: 65px;
+        	font-weight: 700;
+        	text-transform: uppercase;
+        	margin: 0;
+        }
+
+        #home-heading h1 span{
+        	color: #f4c613;
+        	font-weight: 700;
+        }
+
+        #home-text p{
+        	color: white;
+        	font-size: 15px;
+        	font-weight: 100;
+        	margin: 8px 0 30px 0;
+        }
+
+        .btn-general{
+        	font-family: tahoma;
+        	border-radius: 28px;
+        	font-size: 13px;
+        	text-transform: uppercase;
+        	margin: 0 6px;
+        	padding: 12px 46px 12px 46px;
+        	transition: all 0.4s;
+        	background-color: #f4c6;
+        	color: white; 
+        }
+
+		header {
+			position: fixed;
+			padding: 1.5em;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 5000;
+			background-color: rgba(0, 0, 0, 0.25);
+		}
+        
+		.site-nav {
+			position: relative;
+			float: right;
+			z-index: 400;
+			top: 0;
+			left: 0;
+			display: block !important;
+			width: 80%;
+			padding: .75em 1em 0 0;
+			opacity: .95;
+		}
+
+		.site-nav ul {
+			list-style-type: none;
+			margin: 0;
+			text-align: right;
+		}
+
+		.site-nav ul li {
+			display: inline-block;
+			margin-bottom: 0;
+			margin-left: 1.5em;
+		}
+
+		.site-nav ul li a {
+			font-size: .85em;
+			padding: .5em;
+			text-decoration: none;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: #fff;
+			transition: color .3s;
+			transition: 0.23s all ease-in-out;  
+		}
+		  
+		.site-nav ul li a:hover {
+			outline: none;
+			background-color: rgba(250, 246, 246, 1);
+			color:black;
+		}
+
+		.borderStyle{
+			text-align: center;
+			position:relative;
+			margin:20px; 
+			font-size:30px;
+			border:3px solid black;
+			
+		  
+		  }
+		  .icon{
+			position: relative;
+			margin-bottom: 10px;
+			margin-left: 50px;
+			float:right;
+		  }
+		  .outer_div {
+			width: 96%;
+			height: 60vh;
+			margin:10px;
+			padding:10px;
+			display: inline-flex;
+			align-items: center;
+			align-content: center;
+		  }
+		  .outer_div div {
+			margin: 40px;
+		  }
+		  .Topic {
+			position: relative;
+			height: 360px;
+			width: 250px;
+			margin-left: 30px;
+			box-shadow: 5px 4px 15px rgba(196, 196, 196, .4);
+			background: rgba(119, 116, 116,0.3);
+			border-radius: 10px;
+			transition: 0.4s all ease-in-out;
+			z-index: 1;
+			overflow: hidden;
+			cursor: pointer; 
+		  }
+		  .Topic-image {
+			position: absolute;
+			top: 0;
+			height: 240px;
+			width: 100%;
+			object-fit: cover;
+			z-index: -1;
+			transition: 0.4s all ease-in-out;
+		  }
+		  .Topic-content {
+			position: absolute;
+			width: 100%;
+			height:10vh;
+			bottom: 30px;
+			box-sizing: border-box;
+			padding: 0 20px 23px;
+		  }
+		  .Topic-title {
+			font-size: 14px;
+			line-height: 21px;
+			margin-top: 0px;
+			margin-bottom: 1px;
+		  }
+		  .Topic-text {
+			font-size: 14px;
+			letter-spacing: 0.1em;
+			font-weight: 400; 
+			 color: #000000;
+			 transition: color 0.1s ease-in-out;
+			 transition-delay: 0.3s;
+		  }
+		  
+		  .Topic:hover {
+			width: 255px;
+			height: 380px;
+			transition: 0.4s all cubic-bezier(0.28, 0.01, 0.3, 1.02) 0.2s;
+			box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
+		  }
+		  .Topic:hover .Topic-text {
+			 
+			 color: white;
+		  }
+		  
+		  .Topic:hover .Topic-image {
+		  
+			height: 100%;
+			opacity: 0.7;
+		  }
+
+	</style>
+</head>
+<body>
+	<header>
+		<a class="site-logo">
+			<img class="logo" src="images/logo-white.png">
+		</a>
+		  <nav class="site-nav">
+			  <ul>
+				  <li><a href="#home">Home</a></li>
+				  <li><a href="#">About</a></li>
+				  <li><a href="#">Topics</a></li>
+				  <li><a href="#">Highlights</a></li>
+				  <li><a href="#">Contact</a></li>
+			  </ul>
+		  </nav>
+	  </header>
+	  <main>
+      <section id="home">
+     	<video src="mp4.mp4" id="home-bg-video" autoplay loop muted></video>
+
+     	<div id="home-overlay">
+     		<div class="container">
+     			<div id="home-content">
+     				<div id="home-content-inner" class="text-left">
+     					<div id="home-heading">
+     						<h1 id="home-heading-1">The</h1>
+     						<h1 id="home-heading-2">Guide to the<span> World.</span></h1>
+     					</div>
+     					<div id="home-text">
+     						<p>
+     							PETTA PARAAA PEETTAAA PARAAA
+     						</p>
+     					</div>
+
+     					<div id="home-btn">
+     						<a href="" class="btn btn-general" role="button"> Read Today</a>
+     					</div>
+     				</div>
+     			</div>
+     		</div>
+     	</div>
+     </section>    
+	 <!---<h2  class="borderStyle">Topics</h2>
+    
+        <div class="outer_div" >
+            <div class="Topic">
+                <img class="Topic-image" height=100px, width=200px src="../bg1.jpg">
+                <div class="Topic-content">
+                    <i class="far fa-bookmark icon"></i>
+                    <h3 class="Topic-title">Discover the world</h3>
+                    <p class="Topic-text">rugu gdsuyg suiygsui dygs uiy gsig</p>
+                </div>
+            </div>
+
+            <a href="index.html"></a> <div class="Topic">
+                <img class="Topic-image" height=100px, width=200px src="../bg1.jpg">
+                <div class="Topic-content">
+                    <i class="far fa-bookmark icon"></i>
+                    <h3 class="Topic-title">Discover the world</h3>
+                    <p class="Topic-text">rugug dsuygsdfg  fd ddfh dhfh dfhfh uiygsu id</p>
+                </div>
+            </div></a>
+
+            <div class="Topic">
+                <img class="Topic-image" height=100px, width=200px src="../bg1.jpg">
+                <div class="Topic-content">
+                    <i class="far fa-bookmark icon"></i>
+                    <h3 class="Topic-title">Discover the world</h3>
+                    <p class="Topic-text">rugu gdsuyg suiygsui dygsui ygsig</p>
+                </div>
+            </div>
+
+            <div class="Topic">
+                <img class="Topic-image" height=100px, width=200px src="../bg1.jpg">
+                <div class="Topic-content">
+                    <i class="far fa-bookmark icon"></i>
+                    <h3 class="Topic-title">Discover the world</h3>
+                    <p class="Topic-text">rugugds uygsuiygsui ygsuiygs ig</p>
+                </div>
+            </div>
+        </div>   
+        <h2  class="borderStyle">top picks of the week</h2>
+        <div class="slides_track">
+            <div class="slide-1">
+                <img class="slides_images current_slide" src="bg1.jpg">
+            </div>
+            <div class="slide-1">
+                <img class="slides_images" src="bg1.jpg">
+            </div>
+            <div class="slide-1">
+                <img class="slides_images" src="bg1.jpg">
+            </div>
+        </div>   
+	</main>---->
+</body>
+</html>
