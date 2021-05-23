@@ -1,1 +1,49 @@
 
+ <script>
+        //Get the button:
+        scrollup = document.getElementById("scrolling");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollup.style.display = "block";
+        } else {
+            scrollup.style.display = "none";
+        }
+        }
+        function topFunction() {
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0; 
+        }
+        document.getElementById("scrolling").addEventListener("click",topFunction)
+    </script>
+    
+    
+    ---------html-----------
+    <div class="scroller_up" id="scrolling"><i class="fas fa-chevron-up"></i></div>
+    
+    --------css-------------
+    
+    .scroller_up{
+   height: 50px;
+  width:50px;
+  border-radius: 50%;
+  background-color:rgb(247, 110, 133);
+  text-align: center;
+  box-shadow: 0px 0px 15px 0 rgba(44, 13, 13, 0.7);
+  padding-top:8px ;
+  position: fixed;
+  bottom: 20px;
+  color: white;
+  display: inline-block;
+  right:10px;
+  z-index:1000; 
+  display: none;
+  cursor: pointer; /* Add a mouse pointer on hover */
+
+.fas{
+  font-size: 30px;
+  
+}
+}
