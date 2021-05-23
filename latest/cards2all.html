@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/14d3c2ebad.js" crossorigin="anonymous"></script>
+    <link href="stylesheets/cards2all.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content1">
+            <h1>Topics</h1>
+            <p>dhgfhdfg fdf dgfdgdfg fdgdfg fdgdfgg fg dfg fg dd fgdfgfdg </p>
+            <div class="btn_head">
+                <a href="#">Explore</a>
+            </div>
+        </div>
+        
+    </div>
+    <div>
+        <div class="box1">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input type="search" id="search" onkeyup="myFunction()" placeholder="Search..." />
+            </div>
+          </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="category"><div>Science</div></div>
+            <div class="box ">
+                <!-- <div class="imagestyle"><img src="images/krupa.jpg"></div> -->
+                <div class="content">
+               
+                <i class="far fa-bookmark icon1" id="ic1"></i>
+                <h3>card-one</h3>
+                <p>hgshsdgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd  dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf fsdfsdf ssdfddsdgfjhs</p>
+                <a href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="category"><div>Health</div></div>
+            <div class="box ">
+                <!-- <div class="imagestyle"><img src="images/krupa.jpg"></div> -->
+                <div class="content">
+                    
+                <i class="far fa-bookmark icon1" id="ic2"></i>
+                <h3>card-one</h3>
+                <p>hgshsdgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd  dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf fsdfsdf ssdfddsdgfjhs</p>
+                <a href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" >
+            <div class="category"><div>Education</div></div>
+            <div class="box ">
+                <!-- <div class="imagestyle"><img src="images/krupa.jpg"></div> -->
+                <div class="content">
+               
+                <i class="far fa-bookmark icon1" id="ic3"></i>
+                <h3>card-one</h3>
+                <p>hgshsdgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd  dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf fsdfsdf ssdfddsdgfjhs</p>
+                <a href="#">Read more</a>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="card" >
+            <div class="category"><div>Education</div></div>
+            <div class="box ">
+                <!-- <div class="imagestyle"><img src="images/krupa.jpg"></div> -->
+                <div class="content">
+               
+                <i class="far fa-bookmark icon1" id="ic4"></i>
+                <h3>card-one</h3>
+                <p>hgshsdgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd  dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf dgfh\sdgfh\sjdfgh sfsdf sdf sdf fsdf sdfs fds fd fdsf sdfsd fsdfsdf ssdfddsdgf fsdfsdf ssdfddsdgfjhs</p>
+                <a href="#">Read more</a>
+                
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="scroller_up" id="scrolling"><i class="fas fa-chevron-up"></i></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+                var l=1;
+                $('.icon1').on('click', function(){
+                        var id = $(this).attr('id');
+                        id1='#'+id+'0';
+                        if(l==0){
+                            
+                             $('.error1').text('Sign in to bookmark topic');
+                            $(id1).fadeIn('slow');
+                            setTimeout(function(){$('.input-icons').fadeOut('slow');},2000)
+                        }
+                        else{
+                            
+                            var id2 ='#'+id;
+                            $(id2).toggleClass("fas");
+                        }
+                    
+                });
+          });
+    </script>
+    <script type="text/javascript" src="skrollr.js"></script>
+	<script type="text/javascript">
+	var s = skrollr.init();
+	</script>
+    <script>
+        function myFunction() {
+            var input, filter,txtValue,div,cate;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            cate = document.getElementsByClassName("card");
+            let category = document.getElementsByClassName("category");
+            
+            for (let i = 0; i < category.length; i++) {
+                div = category[i].getElementsByTagName("div")[0];
+                txtValue = div.textContent || div.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    cate[i].style.display = "";
+                } else {
+                    cate[i].style.display = "none";
+                }
+            }
+           
+            
+        }
+
+        scrollup = document.getElementById("scrolling");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollup.style.display = "block";
+        } else {
+            scrollup.style.display = "none";
+        }
+        }
+        function topFunction() {
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0; 
+        }
+        document.getElementById("scrolling").addEventListener("click",topFunction)
+    </script>
+ 
+</body>
+</html>
