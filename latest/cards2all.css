@@ -13,7 +13,7 @@ body{
     font-family: Roboto;
     background-color: #ebf5fc;
 }
-.container{
+.container-2{
     display:flex;
     background-color: #ebf5fc;
     justify-content: center;
@@ -23,7 +23,7 @@ body{
     padding: 40px 0;
     
 }
-.wrapper{
+.wrapper-1{
     background:rgba(0,0,0,0.4) url(../images/topicbg.jpg) no-repeat;
     background-position: center;
     background-size: cover;
@@ -61,7 +61,7 @@ margin-top: 25px;
     background-color: red;
     border-radius: 50px;
 }
-.container .card{
+.container-2 .card-2{
     position: relative;
     min-width: 305px;
     height:410px;
@@ -71,7 +71,7 @@ margin-top: 25px;
     transition:all 0.9s ease-in-out ;
     
 }
-.container .card .box{
+.container-2 .card-2 .box-2{
     position: absolute;
     top:10px;
     left:10px;
@@ -86,16 +86,16 @@ margin-top: 25px;
     transition: 0.5s;
 
 }
-.container .card:nth-child(1) .box{
+.container-2 .card-2:nth-child(1) .box{
     background-image:url("../images/krupa.jpg");
 }
-.container .card:nth-child(2) .box{
+.container-2 .card-2:nth-child(2) .box{
     background-image:url("../images/charles.jpg");
 }
-.container .card:nth-child(3) .box{
+.container-2 .card-2:nth-child(3) .box{
     background-image:url("../images/charles.jpg");
 }
-.container .card:nth-child(4) .box{
+.container-2 .card-2:nth-child(4) .box{
     background-image:url("../images/charles.jpg");
 }
 .container-1{
@@ -156,7 +156,7 @@ margin-top: 25px;
     height: 100%;
     object-fit:cover;
   } */
-.container .card:hover .box{
+.container-2 .card-2:hover .box-2{
 transform: translateY(-50px);
 
 box-shadow: 0px 10px 40px rgba(0,0,0,0.2);
@@ -168,18 +168,18 @@ padding:20px;
 text-align: center;
 display: none;
 } */
-.container .card .box .content{
+.container-2 .card-2 .box-2 .content{
     padding:20px;
 text-align: center;
     opacity: 0;
 }
-.container .card:hover .box .content{
+.container-2 .card-2:hover .box-2 .content{
     padding:20px;
     text-align: center;
     opacity: 1;
 }
 
- .container .card .box .content h2{
+ .container-2 .card-2 .box-2 .content h2{
     position: absolute;
     top:-10px;
     right:30px;
@@ -189,7 +189,7 @@ text-align: center;
     pointer-events: none;
 } 
 
-.container .card:hover .box .content h2{
+.container-2 .card-2:hover .box-2 .content h2{
     position: absolute;
     top:-10px;
     right:30px;
@@ -200,25 +200,25 @@ text-align: center;
     color:rgba(0,0,0,0.05);
 }
 
-.container .card .box .content h3{
+.container-2 .card-2 .box-2 .content h3{
     font-size: 1.8em;
     color:#777;
     z-index: 1;
     transition: 0.5s;
 } 
-.container .card:hover .box .content h3,
-.container .card:hover .box .content p{
+.container-2 .card-2:hover .box-2 .content h3,
+.container-2 .card-2:hover .box-2 .content p{
    
 color:#fff;
 }
-.container .card .box .content p{
+.container-2 .card-2 .box-2 .content p{
     font-size: 1em;
     font-weight: 300;
     color:#777;
     z-index: 1;
     transition: 0.5s;
 }
-.container .card .box .content a{
+.container-2 .card-2 .box-2 .content a{
     position: relative;
     display: inline-block;
     padding: 8px 20px;
@@ -230,7 +230,7 @@ color:#fff;
     font-weight: 400;
     box-shadow: 0px 10px 20px rgba(0,0,0,0,0.2);
 } 
-.container .card:hover .box .content a{
+.container-2 .card-2:hover .box-2 .content a{
   
 background-color: #ff568f;
 
